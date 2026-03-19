@@ -18,61 +18,79 @@ function getHumanChoice() {
     return humanChoice;
 }
 
-let humanScore = 0;
-let computerScore = 0;
+function playGame() {
+    let humanScore = 0;
+    let computerScore = 0;
 
-function playRound(humanChoice, computerChoice) {
-    humanChoice = humanChoice.toLowerCase();
-    computerChoice = computerChoice.toLowerCase();
-    console.log(`The computer chose ${computerChoice}.`);
-    switch (humanChoice){
-        case "rock":
-            switch (computerChoice){
-                case "rock":
-                    console.log("Round draw!");
-                    break;
-                case "paper":
-                    console.log("You lose the round!");
-                    computerScore++;
-                    break;
-                case "scissors":
-                    console.log("You win the round!");
-                    humanScore++;
-                    break;
-            };
-            break;
-        case "paper":
-            switch (computerChoice){
-                case "rock":
-                    console.log("You win the round!");
-                    humanScore++;
-                    break;
-                case "paper":
-                    console.log("Round draw!");
-                    break;
-                case "scissors":
-                    console.log("You lose the round!");
-                    computerScore++;
-                    break;
-            };
-            break;
-        case "scissors":
-            switch (computerChoice){
-                case "rock":
-                    console.log("You lose the round!");
-                    computerScore++;
-                    break;
-                case "paper":
-                    console.log("You win the round!");
-                    humanScore++;
-                    break;
-                case "scissors":
-                    console.log("Round draw!");
-                    break;
-            };
-            break;
-        default:
-            console.log("Invalid choice!");
-            break;
+    function playRound(humanChoice, computerChoice) {
+        humanChoice = humanChoice.toLowerCase();
+        computerChoice = computerChoice.toLowerCase();
+        console.log(`The computer chose ${computerChoice}.`);
+        switch (humanChoice){
+            case "rock":
+                switch (computerChoice){
+                    case "rock":
+                        console.log("Round draw!");
+                        break;
+                    case "paper":
+                        console.log("You lose the round!");
+                        computerScore++;
+                        break;
+                    case "scissors":
+                        console.log("You win the round!");
+                        humanScore++;
+                        break;
+                };
+                break;
+            case "paper":
+                switch (computerChoice){
+                    case "rock":
+                        console.log("You win the round!");
+                        humanScore++;
+                        break;
+                    case "paper":
+                        console.log("Round draw!");
+                        break;
+                    case "scissors":
+                        console.log("You lose the round!");
+                        computerScore++;
+                        break;
+                };
+                break;
+            case "scissors":
+                switch (computerChoice){
+                    case "rock":
+                        console.log("You lose the round!");
+                        computerScore++;
+                        break;
+                    case "paper":
+                        console.log("You win the round!");
+                        humanScore++;
+                        break;
+                    case "scissors":
+                        console.log("Round draw!");
+                        break;
+                };
+                break;
+            default:
+                console.log("Invalid choice!");
+                break;
+        }
+    }
+
+    for (let i = 1; i <= 5; i++){
+        console.log(`Round ${i}!`);
+        playRound(getHumanChoice(), getComputerChoice());
+        console.log(`Your score: ${humanScore}.`);
+        console.log(`Computer's score: ${computerScore}.`);
+    }
+    if (humanScore > computerScore){
+        console.log("You win the game!");
+    }
+    else if (humanScore < computerScore){
+        console.log("You lose the game!");
+    }
+    else {
+        console.log("Game draw!");
     }
 }
