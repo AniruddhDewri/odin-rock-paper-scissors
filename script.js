@@ -4,11 +4,15 @@ function getComputerChoice() {
     if (randomNumber < (1/3)) {
         computerChoice = "Rock";
     }
-    else if (randomNumber >= (1/3) && randomNumber < (2/3)) {
+    else if (randomNumber < (2/3)) {
         computerChoice = "Paper";
     }
     else {
         computerChoice = "Scissors";
     }
-    console.log(computerChoice);
+}
+
+function getHumanChoice() {
+    let humanChoice = prompt("Enter your choice - Rock, Paper or Scissors");
+    return humanChoice;
 }
