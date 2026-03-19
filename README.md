@@ -1,1 +1,3 @@
 # odin-rock-paper-scissors
+Odin Project #3
+This is the third project in the Foundations course of the Odin Project curriculum, and its purpose is to serve as practice and demonstration of the JavaScript skills that I have picked up so far in this course. We will be implementing a fully functioning Rock-Paper-Scissors game programmed using JavaScript functions and played via the browser developer console.
